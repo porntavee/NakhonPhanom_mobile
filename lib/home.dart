@@ -6,6 +6,8 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:marine_mobile/component/carousel_rotation.dart';
 import 'package:marine_mobile/pages/coming_soon.dart';
+import 'package:marine_mobile/pages/otop_product_list.dart';
+import 'package:marine_mobile/pages/welfare_list.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'component/carousel_banner.dart';
@@ -203,12 +205,14 @@ class HomePageState extends State<HomePage> {
                       color: Colors.white,
                       size: 42,
                     ),
-                    SizedBox(width: 16),
-                    Text('แหล่งท่องเที่ยว',
-                        style: TextStyle(
-                          fontSize: 28,
-                          color: Colors.white,
-                        )),
+                    // SizedBox(width: 10),
+                    Text(
+                      'แหล่งท่องเที่ยว',
+                      style: TextStyle(
+                        fontSize: 28,
+                        color: Colors.white,
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -228,10 +232,17 @@ class HomePageState extends State<HomePage> {
           Expanded(
             child: InkWell(
               onTap: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => ComingSoon(),
+                //   ),
+                // );
+
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ComingSoon(),
+                    builder: (context) => OtopProductListPage(),
                   ),
                 );
               },
@@ -269,10 +280,17 @@ class HomePageState extends State<HomePage> {
           Expanded(
             child: InkWell(
               onTap: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => ComingSoon(),
+                //   ),
+                // );
+
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ComingSoon(),
+                    builder: (context) => WelfareListPage(),
                   ),
                 );
               },
