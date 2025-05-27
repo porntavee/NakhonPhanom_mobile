@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:marine_mobile/pages/coming_soon.dart' show ComingSoon;
 import 'package:marine_mobile/pages/complain/complain.dart';
+import 'package:marine_mobile/pages/history.dart';
+import 'package:marine_mobile/pages/search_nakhonphanom.dart';
 
 import 'component/material/check_avatar.dart';
 import 'home.dart';
@@ -44,12 +46,12 @@ class _MenuState extends State<Menu> {
       // EventCalendarMain(
       //   title: 'ปฏิทินกิจกรรม',
       // ),
-      ComingSoon(),
+      SearchNakhonPhanomPage(),
       ComplainListCategory(changePage: _changePage),
       // NotificationList(
       //   title: 'แจ้งเตือน',
       // ),
-      ComingSoon(),
+      HistoryPage(),
       UserInformationPage(),
     ];
     super.initState();
