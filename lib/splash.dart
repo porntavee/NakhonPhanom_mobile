@@ -56,21 +56,28 @@ class _SplashPageState extends State<SplashPage> {
     const storage = FlutterSecureStorage();
     String? value = await storage.read(key: 'profileCode2');
 
-    if (value != null && value != '') {
-      Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(
-          builder: (context) => const Menu(),
-        ),
-        (Route<dynamic> route) => false,
-      );
-    } else {
-      Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(
-          builder: (context) => const LoginPage(),
-        ),
-        (Route<dynamic> route) => false,
-      );
-    }
+    // if (value != null && value != '') {
+    //   Navigator.of(context).pushAndRemoveUntil(
+    //     MaterialPageRoute(
+    //       builder: (context) => const Menu(),
+    //     ),
+    //     (Route<dynamic> route) => false,
+    //   );
+    // } else {
+    //   Navigator.of(context).pushAndRemoveUntil(
+    //     MaterialPageRoute(
+    //       builder: (context) => const LoginPage(),
+    //     ),
+    //     (Route<dynamic> route) => false,
+    //   );
+    // }
+
+    Navigator.of(context).pushAndRemoveUntil(
+      MaterialPageRoute(
+        builder: (context) => const Menu(),
+      ),
+      (Route<dynamic> route) => false,
+    );
   }
 
   _buildSplash() {

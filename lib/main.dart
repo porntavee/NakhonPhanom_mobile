@@ -5,7 +5,7 @@ import 'package:marine_mobile/splash.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // LineSDK.instance.setup('2006568128').then((_) {
+  // LineSDK.instance.setup('2007480270').then((_) {
   //   // ignore: avoid_print
   //   print('LineSDK Prepared');
   // });
@@ -14,7 +14,7 @@ Future<void> main() async {
       .initializeApp(); // ✅ ต้องเรียกก่อนใช้งาน Firebase Authentication
 
   try {
-    await LineSDK.instance.setup('2006568128');
+    await LineSDK.instance.setup('2007480270');
     print("LINE SDK Setup Completed!");
   } catch (e) {
     print("LINE SDK Setup Failed: $e");

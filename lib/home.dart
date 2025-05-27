@@ -582,28 +582,28 @@ class HomePageState extends State<HomePage> {
   _read() async {
     _getLocation();
 
+    _futureBanner = postDio('${mainBannerApi}read', {
+      'skip': 0,
+      'limit': 10,
+    });
+    _futureNews = postDio('${newsApi}read', {
+      'skip': _currentNewsPage * _newsLimit,
+      'limit': _newsLimit,
+    });
+    _futureRotation = postDio('${rotationApi}read', {
+      'skip': 0,
+      'limit': 10,
+    });
+    //  Future<dynamic>? _futureRotation = Future.value();
+
+    _futureMainPopUp = postDio('${mainPopupHomeApi}read', {'limit': 10});
+
     //read profile
     profileCode = (await storage.read(key: 'profileCode2'))!;
     if (profileCode != '') {
       setState(() {
         _futureProfile = postDio(profileReadApi, {"code": profileCode});
       });
-
-      _futureBanner = postDio('${mainBannerApi}read', {
-        'skip': 0,
-        'limit': 10,
-      });
-      _futureNews = postDio('${newsApi}read', {
-        'skip': _currentNewsPage * _newsLimit,
-        'limit': _newsLimit,
-      });
-      _futureRotation = postDio('${rotationApi}read', {
-        'skip': 0,
-        'limit': 10,
-      });
-      //  Future<dynamic>? _futureRotation = Future.value();
-
-      _futureMainPopUp = postDio('${mainPopupHomeApi}read', {'limit': 10});
     } else {
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(

@@ -38,7 +38,7 @@ class _MenuState extends State<Menu> {
   @override
   void initState() {
     // _callRead();
-    _callReadNoti();
+    // _callReadNoti();
     pages = <Widget>[
       HomePage(changePage: _changePage),
       // EventCalendarMain(
@@ -60,20 +60,20 @@ class _MenuState extends State<Menu> {
     super.dispose();
   }
 
-  _callReadNoti() async {
-    postDio(
-      '${notificationApi}read',
-      {'skip': 0, 'limit': 1},
-    ).then(
-      (value) async => {
-        setState(
-          () {
-            _ListNotiModel = value;
-          },
-        )
-      },
-    );
-  }
+  // _callReadNoti() async {
+  //   postDio(
+  //     '${notificationApi}read',
+  //     {'skip': 0, 'limit': 1},
+  //   ).then(
+  //     (value) async => {
+  //       setState(
+  //         () {
+  //           _ListNotiModel = value;
+  //         },
+  //       )
+  //     },
+  //   );
+  // }
 
   _changePage(index) {
     setState(() {
